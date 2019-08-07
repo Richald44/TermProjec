@@ -1,9 +1,8 @@
-const http = require('http');
-const site = http.createServer(function(req,res){
-    console.log("hellow World");
+var express = require('express');
+var app = express();
+app.get('/',function(req,res){
+    res.send("hi World");
 
-    res.setHeader('Content-Type','text/html');
-    console.log(req.rawHeaders);
-    res.end('<h1>hellow world</h1>');
+    
 });
-site.listen(3000);
+app.listen(3000);
